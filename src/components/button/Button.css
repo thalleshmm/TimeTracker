@@ -1,0 +1,11 @@
+.mdl-button--float {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.mdl-button--float-above {
+    position: absolute;
+    bottom: 75px;
+    right: 15px;
+}
