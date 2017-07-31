@@ -23,7 +23,7 @@ export default class Button extends Component {
         return (
             <button {...attrs}
                     className={classes.join(' ')}
-                    onClick={this.props.onClick ? this.props.onClick() : ''}>
+                    onClick={this.props.onClick}>
                 {this.props.children}
             </button>
         )
