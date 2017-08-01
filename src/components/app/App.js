@@ -19,14 +19,28 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="app">
-          <aside className="app__aside">
-            <Route path="/" component={(props) => <TaskList {...props} />} />
-          </aside>
-          <main className="app__main">
-            <Route path="/new-task" component={(props) => <TaskForm {...props} />} />
-          </main>
-        </div>
+        <Route path="/" component={props => {
+
+          // When the screen is small (phone), we cannot show 
+          // both containers simoutaniously. So We need to know the 
+          // current pathname to decide which container is going to on focus.
+          // If pathname is '/', we activate the aside container.
+          // Otherwise, the main container should be activated.
+          const { pathname } = props.location;
+          const asideClasses = pathname === '/' ? 'app__aside app__aside--active' : 'app__aside';
+          const mainClasses = pathname !== '/' ? 'app__main app__main--active' : 'app__main';
+
+          return (
+            <div className="app">
+              <aside className={asideClasses}>
+                <Route path="/" component={(props) => <TaskList {...props} />} />
+              </aside>
+              <main className={mainClasses}>
+                <Route exact path="/new-task" component={(props) => <TaskForm {...props} />} />
+              </main>
+            </div>
+          )
+        }} />
       </BrowserRouter>
     );
   }
