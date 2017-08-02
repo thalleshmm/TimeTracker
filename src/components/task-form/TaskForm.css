@@ -1,0 +1,15 @@
+.task-form-card {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 15px;
+}
+
+.task-form-card__footer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.task-form-textfield {
+    width: 100%;
+}

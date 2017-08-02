@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './Button.css';
 
 export default class Button extends Component {
+    componentDidMount() {
+        if ('componentHandler' in window)
+            window.componentHandler.upgradeElement(this.element);
+    }
+
     render() {
         let classes = ['mdl-button', 'mdl-js-button'];
 
@@ -17,11 +22,13 @@ export default class Button extends Component {
         if (this.props.floatAbove) classes.push('mdl-button--float-above');
 
         let attrs = {
-            disabled: this.props.disabled
+            disabled: this.props.disabled,
+            type: this.props.submit ? 'submit' : 'button'
         };
 
         return (
             <button {...attrs}
+                    ref={element => this.element = element}
                     className={classes.join(' ')}
                     onClick={this.props.onClick}>
                 {this.props.children}

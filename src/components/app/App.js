@@ -28,15 +28,16 @@ class App extends Component {
           // Otherwise, the main container should be activated.
           const { pathname } = props.location;
           const asideClasses = pathname === '/' ? 'app__aside app__aside--active' : 'app__aside';
+          const asideTabIndex = pathname === '/' ? 0 : -1;
           const mainClasses = pathname !== '/' ? 'app__main app__main--active' : 'app__main';
 
           return (
             <div className="app">
-              <aside className={asideClasses}>
+              <aside className={asideClasses} tabIndex={asideTabIndex}>
                 <Route path="/" component={(props) => <TaskList {...props} />} />
               </aside>
               <main className={mainClasses}>
-                <Route exact path="/new-task" component={(props) => <TaskForm {...props} />} />
+                <Route exact path="/new-task" component={props => <TaskForm {...props} />} />
               </main>
             </div>
           )
