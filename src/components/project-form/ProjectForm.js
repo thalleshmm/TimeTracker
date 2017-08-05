@@ -3,13 +3,13 @@ import Page from '../page/Page';
 import TextInput from '../mdl/text-field/TextField';
 import Button from '../mdl/button/Button';
 import Icon from '../mdl/icon/Icon';
-import './TaskForm.css';
+import './ProjectForm.css';
 
-export default class TaskForm extends Component {
+export default class ProjectForm extends Component {
     cancelDialog() {
         const detail = {
-            title: 'Cancel new task',
-            content: 'Are you sure you want to cancel this task?',
+            title: 'Cancel new project',
+            content: 'Are you sure you want to cancel this project?',
             buttons: [
                 <Button key="1" accent onClick={this.cancelDialogAgree.bind(this)}>Yes</Button>,
                 <Button key="0" onClick={this.cancelDialogClose.bind(this)}>No</Button>
@@ -32,11 +32,11 @@ export default class TaskForm extends Component {
 
     render() {
         return (
-            <Page title="New Task">
+            <Page title="New Project">
                 <div className="container">
-                    <form className="task-form-card mdl-card mdl-card mdl-shadow--2dp">
+                    <form className="project-form-card mdl-card mdl-card mdl-shadow--2dp">
                         <TextInput label="Description..." />
-                        <div className="task-form-card__footer">
+                        <div className="project-form-card__footer">
                             <Button accent ripple>Save</Button>
                             <Button ref={el => this.cancelButton = el}
                                     onClick={this.cancelDialog.bind(this)}

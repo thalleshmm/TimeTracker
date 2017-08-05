@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TaskList from '../task-list/TaskList';
-import TaskForm from '../task-form/TaskForm';
+import ProjectList from '../project-list/ProjectList';
+import ProjectForm from '../project-form/ProjectForm';
 import Dialog from '../mdl/dialog/Dialog';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
@@ -35,10 +35,10 @@ class App extends Component {
           return (
             <div className="app">
               <aside className={asideClasses} tabIndex={asideTabIndex}>
-                <Route path="/" component={(props) => <TaskList {...props} />} />
+                <Route path="/" component={(props) => <ProjectList {...props} />} />
               </aside>
               <main className={mainClasses}>
-                <Route exact path="/new-task" component={props => <TaskForm {...props} />} />
+                <Route exact path="/new-project" component={props => <ProjectForm {...props} />} />
               </main>
               <Dialog />
             </div>

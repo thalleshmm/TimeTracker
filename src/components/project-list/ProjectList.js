@@ -3,16 +3,16 @@ import Page from '../page/Page';
 import Button from '../mdl/button/Button';
 import Icon from '../mdl/icon/Icon';
 
-export default class TaskList extends Component {
+export default class ProjectList extends Component {
 
-    newTask() {
-        this.props.history.push('/new-task');
+    newProject() {
+        this.props.history.push('/new-project');
     }
 
     render() {
         return (
             <Page title="Time Tracker">
-                <Button fab colored ripple float onClick={this.newTask.bind(this)}>
+                <Button fab colored ripple float onClick={this.newProject.bind(this)}>
                     <Icon>add</Icon>
                 </Button>
             </Page>
