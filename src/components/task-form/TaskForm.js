@@ -27,7 +27,7 @@ export default class TaskForm extends Component {
 
     cancelDialogAgree() {
         this.cancelDialogClose();
-        this.history.push('/');
+        this.props.history.push('/');
     }
 
     render() {

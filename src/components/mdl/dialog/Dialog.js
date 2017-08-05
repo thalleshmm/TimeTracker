@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import dialogPolyfill from 'dialog-polyfill/dialog-polyfill';
 import Button from '../button/Button';
 import 'dialog-polyfill/dialog-polyfill.css';
+import './Dialog.css';
 
 export default class Dialog extends Component {
     constructor(props) {
