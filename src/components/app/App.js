@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TaskList from '../task-list/TaskList';
 import TaskForm from '../task-form/TaskForm';
+import Dialog from '../mdl/dialog/Dialog';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 
@@ -39,6 +40,7 @@ class App extends Component {
               <main className={mainClasses}>
                 <Route exact path="/new-task" component={props => <TaskForm {...props} />} />
               </main>
+              <Dialog />
             </div>
           )
         }} />
