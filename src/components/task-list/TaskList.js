@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Page from '../page/Page';
-import Button from '../button/Button';
-import Icon from '../icon/Icon';
+import Button from '../mdl/button/Button';
+import Icon from '../mdl/icon/Icon';
 
 export default class TaskList extends Component {
 
