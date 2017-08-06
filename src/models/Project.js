@@ -30,7 +30,7 @@ class Project {
 
     delete(targetProject) {
         this._projects.forEach((project, index) => {
-            if (project.id === targetTask.id) {
+            if (project.id === targetProject.id) {
                 this._projects.splice(index, 1);
             }
         });
@@ -47,13 +47,13 @@ class Project {
     }
 
     _getFromStorage() {
-        let data = localStorage.getItem('projects');
-        if (!data) data = [];
+        let data = window.localStorage.getItem('projects');
+        if (!data) return [];
         return JSON.parse(data);
     }
 
     _saveInStorage(projects) {
-        localStorage.setItem('projects', JSON.stringify(projects));
+        window.localStorage.setItem('projects', JSON.stringify(projects));
     }
 }
 

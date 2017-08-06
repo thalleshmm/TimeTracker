@@ -12,7 +12,7 @@ export default class Dialog extends Component {
             title: null,
             content: null,
             onAgree: null,
-            buttons: <Button ripple colored onClick={this.close.bind(this)} />
+            buttons: <Button ripple colored onClick={this.close.bind(this)}>OK</Button>
         };
 
         window.addEventListener('dialog-open', this.open.bind(this));

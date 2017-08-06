@@ -5,7 +5,11 @@ import './TextField.css';
 export default class TextInput extends Component {
     componentDidMount() {
         if ('componentHandler' in window)
-            window.componentHandler.upgradeElement(this.element);
+            window.componentHandler.upgradeElement(this.wrapper);
+    }
+
+    get value() {
+        return this.input.value;
     }
     
     render() {
@@ -15,13 +19,14 @@ export default class TextInput extends Component {
         const id = uid();
 
         return (
-            <div ref={element => this.element = element} className={classes.join(' ')}>
+            <div ref={el => this.wrapper = el} className={classes.join(' ')}>
                 <input className="mdl-textfield__input"
                        type="text"
                        id={id}
                        pattern={this.props.pattern}
                        maxLength={this.props.maxLength}
-                       value={this.props.value} />
+                       value={this.props.value}
+                       ref={el => this.input = el} />
                 <label className="mdl-textfield__label" htmlFor={id}>{this.props.label}</label>
             </div>
         )
